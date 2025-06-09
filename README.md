@@ -117,20 +117,19 @@ The results of the advanced analytics were consolidated into two comprehensive r
 │   │   ├── data_catalog.md
 │   │   ├── data_flow.drawio
 │   │   ├── data_integration.drawio
-│   │   ├── data_models.drawio
-│   │   └── project_planning_notion_summary.md
+│   │   ├── data_mart(data model).drawio
 │   │
 │   ├── scripts/                        # SQL scripts for ETL and transformations
 │   │   ├── 00_database_setup/
 │   │   │   └── create_database_schemas.sql
 │   │   ├── bronze/
-│   │   │   ├── ddl_bronze_tables.sql
-│   │   │   └── sp_load_bronze_layer.sql
+│   │   │   ├── ddl_bronze.sql
+│   │   │   └── proc_load_bronze.sql
 │   │   ├── silver/
-│   │   │   ├── ddl_silver_tables.sql
-│   │   │   └── sp_load_silver_layer.sql
+│   │   │   ├── ddl_silver.sql
+│   │   │   └── proc_load_silver.sql
 │   │   └── gold/
-│   │       └── views_gold_layer.sql
+│   │       └── ddl_gold.sql
 │   │
 │   ├── tests/                          # Test scripts and quality checks
 │   │   ├── quality_checks_silver_layer.sql
