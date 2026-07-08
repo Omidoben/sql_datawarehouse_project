@@ -80,6 +80,7 @@ SELECT
     sd.sls_ord_num AS order_number,
     pr.product_key AS product_key,
     cu.customer_key AS customer_key,
+	cu.country AS country,
     sd.sls_order_dt AS order_date,
     sd.sls_ship_dt AS shipping_date,
     sd.sls_due_dt AS due_date,

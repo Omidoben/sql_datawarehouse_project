@@ -41,7 +41,9 @@ WITH base_query AS(
 		c.customer_key,
 		c.customer_number,
 		CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
-		DATEDIFF(year, c.birth_date, GETDATE()) age
+		DATEDIFF(year, c.birth_date, GETDATE()) age,
+		c.country,
+		c.marital_status
 	FROM gold.fact_sales f
 	LEFT JOIN gold.dim_customers c
 	ON c.customer_key = f.customer_key
@@ -54,6 +56,8 @@ customer_aggregation AS (
 		customer_key,
 		customer_number,
 		customer_name,
+		country,
+		marital_status,
 		age,
 		COUNT(DISTINCT order_number) AS total_orders,
 		SUM(sales_amount) AS total_sales,
@@ -66,12 +70,16 @@ customer_aggregation AS (
 		customer_key,
 		customer_number,
 		customer_name,
+		country,
+		marital_status,
 		age
-)
+	)
 SELECT
 customer_key,
 customer_number,
 customer_name,
+country,
+marital_status,
 age,
 CASE 
 	 WHEN age < 20 THEN 'Under 20'
@@ -90,7 +98,7 @@ DATEDIFF(month, last_order_date, GETDATE()) AS recency,
 total_orders,
 total_sales,
 total_quantity,
-total_products
+total_products,
 lifespan,
 -- Compuate average order value (AVO)
 CASE WHEN total_sales = 0 THEN 0
