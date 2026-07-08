@@ -1,10 +1,10 @@
 
 # Data WareHouse & Data Analytics Project
 
-### 📌 Project Overview
+###  Project Overview
 This project involved the design, development, and implementation of a **Microsoft SQL Server** data warehouse, integrating business data from CRM (Customer Relationship Management) and ERP (Enterprise Resource Planning) systems. The primary objective was to consolidate these data sources into a unified, clean, and analytical-ready repository to enable comprehensive reporting, advanced analytics, and strategic decision-making.
 
-### 🛠️ Project Planning & Management
+###  Project Planning & Management
 The entire project lifecycle, from initial ideation to deployment, was planned and tracked using Notion. This involved breaking down the project into six key epics, each with its own set of detailed tasks (sub-epics):
 
 **Requirements Analysis:** Defining and documenting business needs and data requirements.
@@ -38,7 +38,7 @@ Data for this project was extracted from the following simulated operational sys
 
 `erp_px_cat_g1v2 (Product categories and subcategories)`
 
-### 🧱 Data Warehouse Architecture  ETL Process
+###  Data Warehouse Architecture  ETL Process
 This data warehouse project implemented a Medallion Architecture pattern (Bronze, Silver, Gold layers) within a Microsoft SQL Server environment. This approach ensures progressive data quality improvement and logical separation of concerns:
 
 **Bronze Layer:** Stores exact, immutable copies of source data.
@@ -50,7 +50,7 @@ This data warehouse project implemented a Medallion Architecture pattern (Bronze
 `The Extract, Transform, Load (ETL) process for this data warehouse was developed using T-SQL stored procedures within SQL Server. The process is executed in distinct stages, mirroring the Medallion Architecture.`
 
 
-### 📈 Exploratory Data Analysis (EDA)
+###  Exploratory Data Analysis (EDA)
 
 After the Gold layer, Exploratory Data Analysis (EDA) was performed to ensure data integrity, consistency, and to gain initial insights.
 
@@ -68,7 +68,7 @@ SQL Server Management Studio (SSMS) for direct SQL queries.
 
 **Ranking & Magnitude Analysis:** Identifying top-performing products, customers, and regions
 
-### 📊 📈 Advanced Analytics
+###  Advanced Analytics
 
 Building upon the insights from EDA, a series of advanced analytical techniques were applied to uncover deeper patterns and provide actionable intelligence.
 
@@ -92,12 +92,22 @@ Building upon the insights from EDA, a series of advanced analytical techniques 
 
 `Purpose:` To analyze how an individual part (e.g., a specific product category) is performing compared to the overall business, understanding its proportional impact.
 
-### 📑 Reporting & Insights
+###  Reporting & Insights
 The results of the advanced analytics were consolidated into two comprehensive reports, designed to provide business users with readily consumable insights.
 
 **i) Customer Report:** Consolidates key customer metrics and behaviors to understand customer spending and engagement.
 
 **ii) Product Report:** Consolidates information about products and their key performance metrics.
+
+###  Power BI Dashboards
+
+Two Power BI dashboards were built on top of the Gold layer to visualize the customer and sales insights described above.
+
+**Customer Performance Dashboard**
+![Customer Performance Dashboard](PowerBi%20Dashboards/CustomerPerformanceDashboard.jpg)
+
+**Sales Performance Dashboard**
+![Sales Performance Dashboard](PowerBi%20Dashboards/SalesPerformanceDashboard.jpg)
 
 📂 Repository Structure
 
@@ -144,3 +154,6 @@ The results of the advanced analytics were consolidated into two comprehensive r
     └── Reports/                        # Final consolidated reports
         ├── customer_report.sql
         └── product_report.sql
+└── PowerBi Dashboards/                 # Power BI dashboard screenshots
+    ├── CustomerPerformanceDashboard.jpg
+    └── SalesPerformanceDashboard.jpg
